@@ -13,6 +13,13 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  created: function () {
+    console.log(1212)
+  },
+  beforeRouteEnter (to, from, next) {
+    debugger
+    next()
   }
 }
 </script>

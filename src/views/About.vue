@@ -15,7 +15,7 @@ export default {
     console.log(1212)
   },
   beforeRouteEnter (to, from, next) {
-    debugger
+    // debugger
     next()
   }
 }

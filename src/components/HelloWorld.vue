@@ -87,6 +87,7 @@ export default {
       style: 'black'
     })
   },
+
   beforeRouteEnter (to, from, next) {
     next()
   }

@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <el-button type="text" @click="showDialog">点击打开 Dialog</el-button>
+    <BaseDialog :visible.sync="dialogVisible"></BaseDialog>
     <BaseButton></BaseButton>
     <img alt="Vue logo" src="../assets/logo.png" />
     <ul id="example-1">
@@ -20,14 +22,27 @@ export default {
     HelloWorld
     // BaseButton
   },
-  data: function () {
+  data () {
     return {
+      dialogVisible: false,
       items: [{ message: 'Foo' }, { message: 'Bar' }]
     }
   },
-  created: function () {
-    console.log(1212)
+
+  created () {
+    console.log('父组件的dialogVisible', this.dialogVisible)
   },
+  methods: {
+    showDialog () {
+      this.dialogVisible = true
+    }
+  },
+  watch: {
+    dialogVisible (newQuestion, oldQuestion) {
+      console.log('newQuestion', newQuestion, oldQuestion)
+    }
+  },
+
   beforeRouteEnter (to, from, next) {
     // debugger
     next()

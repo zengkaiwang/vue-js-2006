@@ -77,15 +77,15 @@ export default {
     msg: String
   },
   created: function () {
-    var obj = new window.WxLogin({
-      self_redirect: false,
-      id: 'login_container',
-      appid: '11111111111',
-      scope: 'snsapi_login',
-      redirect_uri: 'http://bd.hcity.com/callBack',
-      state: 'A123DC35165464',
-      style: 'black'
-    })
+    // var obj = new window.WxLogin({
+    //   self_redirect: false,
+    //   id: 'login_container',
+    //   appid: '11111111111',
+    //   scope: 'snsapi_login',
+    //   redirect_uri: 'http://bd.hcity.com/callBack',
+    //   state: 'A123DC35165464',
+    //   style: 'black'
+    // })
   },
 
   beforeRouteEnter (to, from, next) {

@@ -29,7 +29,7 @@ export default {
     // }
   },
   created () {
-    console.log('子组件执行了')
+    // console.log('子组件执行了')
   },
   methods: {
     closeDialog () {

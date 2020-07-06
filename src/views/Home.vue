@@ -1,5 +1,22 @@
 <template>
   <div class="home">
+    <!-- 自定义指令 -->
+    <BaseDirective></BaseDirective>
+
+    <!-- 多元素过渡 -->
+    <transition>
+      <div v-if="items.length > 0">午安啦</div>
+      <p v-else>Sorry, no items found.</p>
+    </transition>
+
+    <!-- vue过渡效果 -->
+    <div>
+      <button v-on:click="show = !show">Toggle</button>
+    </div>
+    <transition name="fade">
+      <p v-if="show">hello</p>
+    </transition>
+
     <!-- 强制刷新 -->
     <el-button type="dafault" @click="updateCom">点击更新数组，同时强刷新</el-button>
 
@@ -15,6 +32,7 @@
     <ul id="example-1">
       <li v-for="item in items" :key="item.message">{{ item.message }}</li>
     </ul>
+
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -31,12 +49,13 @@ export default {
   data () {
     return {
       dialogVisible: false,
+      show: false,
       items: [{ message: 'Foo' }, { message: 'Bar' }]
     }
   },
 
   created () {
-    console.log('执行了组件created')
+    // console.log('执行了组件created')
     // console.log('父组件的dialogVisible', this.dialogVisible)
   },
   mounted () {
@@ -64,3 +83,13 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

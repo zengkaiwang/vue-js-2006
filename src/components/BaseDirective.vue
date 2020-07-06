@@ -35,7 +35,6 @@ export default {
     },
     clickoutside: {
       bind (el, binding) {
-        debugger
         function documentHandler (e) {
           if (el.contains(e.target)) {
             return false
